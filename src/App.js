@@ -1,10 +1,13 @@
 import Page from './components/Page'
+import { ExamProvider } from './context/ExamContext'
 import './styles/App.css'
 
 function App () {
   return (
     <div className='App'>
-      <Page />
+      <ExamProvider>
+        <Page />
+      </ExamProvider>
     </div>
   )
 }

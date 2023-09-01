@@ -1,9 +1,11 @@
 import React from 'react'
 import ScoreProgressBar from './ScoreProgressBar'
 import '../styles/Score.css'
+import { useExam } from '../hooks/useExam'
 
 const Score = () => {
-  const currentCaseScore = 30
+  const { score } = useExam()
+  const currentCaseScore = score
   const bestCaseScore = 90
   return (
     <div className='Score'>
@@ -14,7 +16,7 @@ const Score = () => {
       <ScoreProgressBar
         bestCaseScore={90}
         currentCaseScore={currentCaseScore}
-        worstCaseScore={20}
+        worstCaseScore={0}
       />
     </div>
   )

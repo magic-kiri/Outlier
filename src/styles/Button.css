@@ -1,0 +1,19 @@
+.CustomButton {
+  font-size: 23px;
+  border-radius: 8px;
+  width: 45%;
+}
+.CustomButton:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.Clicked {
+  background-color: black;
+  color: white;
+}
+
+.GridButton {
+  width: 85%;
+}

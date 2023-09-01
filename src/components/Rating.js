@@ -15,7 +15,7 @@ const Rating = ({ difficulty }) => {
   const ratingStars = []
   for (let index = 0; index < 5; index++) {
     ratingStars.push(
-      <span id={index} className={`Star ${index < rating ? 'filled' : ''}`} />
+      <span key={index} className={`Star ${index < rating ? 'filled' : ''}`} />
     )
   }
   return <div>{ratingStars}</div>

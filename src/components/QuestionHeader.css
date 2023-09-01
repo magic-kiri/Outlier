@@ -1,0 +1,19 @@
+.QuestionHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 35px;
+}
+
+.QuestionHeader .Serial {
+  font-weight: 500;
+  opacity: 0.85;
+  margin: unset;
+}
+
+.QuestionHeader .Category {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 400;
+  opacity: 0.85;
+}

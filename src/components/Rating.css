@@ -1,0 +1,12 @@
+.Star {
+    margin-right: 5px;
+  }
+  .Star::before {
+    content: "★";
+    opacity: 0.4;
+    margin-right: 5px;
+  }
+  .filled:before {
+    content: "★";
+    opacity: 1;
+  }

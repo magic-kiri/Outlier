@@ -1,0 +1,9 @@
+.Body {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 98%;
+  margin-left: 16%;
+  margin-right: 16%;
+}
+

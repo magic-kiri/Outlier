@@ -1,0 +1,10 @@
+.Score {
+  height: 10%;
+}
+
+.Score .TitleBox {
+  display: flex;
+  justify-content: space-between;
+  height: 35%;
+  align-items: center;
+}

@@ -1,0 +1,26 @@
+.ScoreBar {
+  height: 35%;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: black;
+  position: relative;
+}
+
+.ScoreBar .WorstCase {
+  height: 100%;
+  background: black;
+  position: absolute;
+  z-index: 3;
+}
+.ScoreBar .Current {
+  height: 100%;
+  background: #717171;
+  position: absolute;
+  z-index: 2;
+}
+.ScoreBar .BestCase {
+  height: 100%;
+  background: #d2d2d2;
+  position: absolute;
+  z-index: 1;
+}

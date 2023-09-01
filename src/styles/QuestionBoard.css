@@ -1,0 +1,9 @@
+.QuestionBoard {
+  height: inherit;
+  padding-top: 5%;
+}
+
+.QuestionBoard .Description {
+  font-size: 30px;
+  font-weight: 400;
+}

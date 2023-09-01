@@ -1,6 +1,6 @@
 import React from 'react'
 import ScoreProgressBar from './ScoreProgressBar'
-import './Score.css'
+import '../styles/Score.css'
 
 const Score = () => {
   const currentCaseScore = 30

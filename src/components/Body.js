@@ -1,8 +1,8 @@
 import React from 'react'
 import Score from './Score'
 import QuestionHeader from './QuestionHeader'
-import './Body.css'
-import QuestionPaper from './QuestionePaper'
+import QuestionBoard from './QuestioneBoard'
+import '../styles/Body.css'
 
 const Body = ({ totalQuestionCount, currentQuestionIndex, question }) => {
   return (
@@ -13,7 +13,7 @@ const Body = ({ totalQuestionCount, currentQuestionIndex, question }) => {
         totalQuestionCount={totalQuestionCount}
         currentQuestionIndex={currentQuestionIndex}
       />
-      <QuestionPaper question={question.question} />
+      <QuestionBoard question={question.question} />
       <Score />
     </div>
   )

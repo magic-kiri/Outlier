@@ -1,5 +1,5 @@
 import React from 'react'
-import './Rating.css'
+import '../styles/Rating.css'
 
 const Rating = ({ difficulty }) => {
   let rating = 3

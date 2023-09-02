@@ -1,8 +1,17 @@
 ![Outlier.org](https://i.imgur.com/vJowpL1.png)
 
 ---
+# Steps To Run 
+Follow these steps to compile the project properly.
+```
+npm install
+node server.js
+npm run start
+```
+
 
 # Outlier Engineering React Quiz Challenge
+
 
 Quizes are common feature of our student-facing apps. Can you build a simple quiz interface with React while following [Outlier's best practices](https://github.com/outlier-org/onboarding/blob/master/README.md#engineering-onboarding-guide)?
 

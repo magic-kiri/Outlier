@@ -5,8 +5,6 @@
 }
 .CustomButton:hover {
   cursor: pointer;
-  background-color: black;
-  color: white;
 }
 
 .Clicked {
@@ -16,4 +14,10 @@
 
 .GridButton {
   width: 85%;
+}
+
+.Visible {
+  background-color: white;
+  color: black;
+  border: 2px outset black;
 }

@@ -19,7 +19,7 @@ const QuestionBoard = ({ question }) => {
         correctAnswer={correctAnswer}
         incorrectAnswers={incorrectAnswers}
       />
-      <Result />
+      <Result index={index} correctAnswer={correctAnswer} />
     </div>
   )
 }

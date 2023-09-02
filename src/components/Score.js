@@ -4,9 +4,11 @@ import '../styles/Score.css'
 import { useExam } from '../hooks/useExam'
 
 const Score = () => {
-  const { score } = useExam()
-  const currentCaseScore = score
-  const bestCaseScore = 90
+  const { getCurrentScore, getBestPossibleScore, getWorstPossibleScore } =
+    useExam()
+  const currentCaseScore = getCurrentScore()
+  const bestCaseScore = getBestPossibleScore()
+  const worstCaseScore = getWorstPossibleScore()
   return (
     <div className='Score'>
       <div className='TitleBox'>
@@ -14,9 +16,9 @@ const Score = () => {
         <h4>Max Score: {bestCaseScore}%</h4>
       </div>
       <ScoreProgressBar
-        bestCaseScore={90}
+        bestCaseScore={bestCaseScore}
         currentCaseScore={currentCaseScore}
-        worstCaseScore={0}
+        worstCaseScore={worstCaseScore}
       />
     </div>
   )

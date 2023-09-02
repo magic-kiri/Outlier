@@ -1,6 +1,6 @@
 import React from 'react'
 import Rating from './Rating'
-import '../styles/QuestionHeader.css'
+import '../../styles/QuestionHeader.css'
 
 const QuestionHeader = ({
   currentQuestionIndex,

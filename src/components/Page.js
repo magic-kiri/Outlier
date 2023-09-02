@@ -1,4 +1,4 @@
-import ProgressBar from './ProgressBar'
+import ProgressBar from './Bar/ProgressBar'
 import Body from './Body'
 import { useExam } from '../hooks/useExam'
 import Loading from './Loading'

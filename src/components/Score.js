@@ -1,5 +1,5 @@
 import React from 'react'
-import ScoreProgressBar from './ScoreProgressBar'
+import ScoreProgressBar from './Bar/ScoreProgressBar'
 import '../styles/Score.css'
 import { useExam } from '../hooks/useExam'
 

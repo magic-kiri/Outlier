@@ -1,6 +1,6 @@
 import React from 'react'
-import { useExam } from '../hooks/useExam'
-import '../styles/ProgressBar.css'
+import { useExam } from '../../hooks/useExam'
+import '../../styles/ProgressBar.css'
 
 const ProgressBar = () => {
   const { completedPercentage } = useExam()

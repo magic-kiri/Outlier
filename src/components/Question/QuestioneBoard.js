@@ -1,7 +1,7 @@
 import React from 'react'
 import AnswerSheet from './AnswerSheet'
-import Result from './Result'
-import '../styles/QuestionBoard.css'
+import Result from '../Result'
+import '../../styles/QuestionBoard.css'
 
 const QuestionBoard = ({ question }) => {
   const {

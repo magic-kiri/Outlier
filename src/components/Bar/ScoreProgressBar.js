@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/ScoreProgressBar.css'
+import '../../styles/ScoreProgressBar.css'
 
 const ScoreProgressBar = ({
   bestCaseScore,

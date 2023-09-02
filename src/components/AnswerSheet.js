@@ -1,9 +1,14 @@
-import React from 'react'
+import { useMemo } from 'react'
 import Choice from './Choice'
 import '../styles/AnswerSheet.css'
+import { randomShuffle } from '../lib/shuffle'
 
 const AnswerSheet = ({ index, correctAnswer, incorrectAnswers }) => {
-  const choices = incorrectAnswers.map((text, idx) => (
+  const options = useMemo(() => {
+    return randomShuffle([...incorrectAnswers, correctAnswer])
+  }, [index])
+
+  const choices = options.map((text, idx) => (
     <Choice
       index={index}
       key={idx}
@@ -11,14 +16,7 @@ const AnswerSheet = ({ index, correctAnswer, incorrectAnswers }) => {
       alignment={idx % 2 ? 'Right' : 'Left'}
     />
   ))
-  choices.push(
-    <Choice
-      key={choices.length}
-      index={index}
-      alignment='Right'
-      text={correctAnswer}
-    />
-  )
+
   return <div className='AnswerBox'>{choices}</div>
 }
 

@@ -2,13 +2,18 @@ import React from 'react'
 import '../styles/Rating.css'
 
 const Rating = ({ difficulty }) => {
-  let rating = 3
+  let rating = 5
   switch (difficulty) {
     case 'easy':
       rating = 1
       break
     case 'medium':
       rating = 2
+      break
+    case 'hard':
+      rating = 3
+      break
+    default:
       break
   }
 

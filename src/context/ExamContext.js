@@ -1,34 +1,62 @@
-import { useState, createContext } from 'react'
-import Questions from '../questions.json'
+import { useState, createContext, useEffect, useMemo } from 'react'
 
 const ExamContext = createContext({})
 
+const loadQuestions = async (setQuestions) => {
+  try {
+    const response = await fetch('http://localhost:4000/questions')
+    const data = await response.json()
+    setQuestions(data)
+  } catch (error) {
+    console.log(error)
+    alert('Make sure the backend server is running on port 4000')
+  }
+}
+
 const ExamProvider = ({ children }) => {
+  const [questions, setQuestions] = useState(null)
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [answers, setAnswers] = useState({})
 
-  const totalQuestionCount = Questions.length
+  useEffect(() => {
+    loadQuestions(setQuestions)
+  }, [])
 
-  const submittedChoices = Object.entries(answers)
-  const totalSubmissionCount = submittedChoices.length
-  let currentQuestion = null
-  if (currentQuestionIndex < totalQuestionCount) {
-    currentQuestion = {
-      ...Questions[currentQuestionIndex],
+  const submittedChoices = useMemo(() => Object.entries(answers), [answers])
+  const totalSubmissionCount = useMemo(
+    () => submittedChoices.length,
+    [submittedChoices]
+  )
+
+  let totalQuestionCount = useMemo(
+    () => (questions === null ? null : questions.length),
+    [questions]
+  )
+  let currentQuestion = useMemo(() => {
+    if (
+      totalQuestionCount === null ||
+      totalQuestionCount <= currentQuestionIndex
+    ) {
+      return null
+    }
+
+    return {
+      ...questions[currentQuestionIndex],
       index: currentQuestionIndex
     }
-  }
+  }, [totalQuestionCount, currentQuestionIndex, questions])
 
-  const completedPercentage = Math.min(
-    (100 * currentQuestionIndex) / totalQuestionCount,
-    100
+  const isLoading = useMemo(() => questions === null, [questions])
+
+  const completedPercentage = useMemo(
+    () => Math.min((100 * currentQuestionIndex) / totalQuestionCount, 100),
+    [currentQuestionIndex, totalQuestionCount]
   )
 
   const submitAnswer = (index, answer) => {
     if (answers[index]) {
       return
     }
-
     setAnswers((prevAns) => ({ ...prevAns, [index]: answer }))
   }
   const gotoNextQuestion = () => {
@@ -40,12 +68,12 @@ const ExamProvider = ({ children }) => {
     return answers[index]
   }
   const getAnswer = (index) => {
-    return Questions[index].correct_answer
+    return questions[index].correct_answer
   }
 
   const getCorrectSubmissionCount = () => {
     return submittedChoices.reduce(
-      (sum, [key, value]) => sum + (Questions[key].correct_answer === value),
+      (sum, [key, value]) => sum + (questions[key].correct_answer === value),
       0
     )
   }
@@ -76,6 +104,7 @@ const ExamProvider = ({ children }) => {
   }
 
   const values = {
+    isLoading,
     currentQuestion,
     completedPercentage,
     submitAnswer,

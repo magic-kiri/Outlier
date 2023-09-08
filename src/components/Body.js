@@ -3,8 +3,8 @@ import Score from './Score'
 import QuestionHeader from './Question/QuestionHeader'
 import QuestionBoard from './Question/QuestioneBoard'
 import { useExam } from '../hooks/useExam'
-import '../styles/Body.css'
 import CompletedBanner from './CompletedBanner'
+import '../styles/Body.css'
 
 const Body = () => {
   const { currentQuestion, totalQuestionCount } = useExam()

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import '../../styles/Choice.css'
 import Button from '../Button'
 import { useExam } from '../../hooks/useExam'
+import '../../styles/Choice.css'
 
 const Choice = ({ index, text, alignment = '' }) => {
   const { submitAnswer, getAnswer, getSubmittedAnswer } = useExam()

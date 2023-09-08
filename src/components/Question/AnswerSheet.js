@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import Choice from './Choice'
-import '../../styles/AnswerSheet.css'
 import { randomShuffle } from '../../lib/shuffle'
+import '../../styles/AnswerSheet.css'
 
 const AnswerSheet = ({ index, correctAnswer, incorrectAnswers }) => {
   const options = useMemo(() => {

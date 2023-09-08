@@ -10,10 +10,10 @@ const QuestionHeader = ({
 }) => {
   return (
     <div className='QuestionHeader'>
-      <h1 className='Serial'>
+      <h1 className='Serial' data-testid='Header-Title'>
         Question {currentQuestionIndex + 1} of {totalQuestionCount}
       </h1>
-      <h3 className='Category'>{decodeURIComponent(category)}</h3>
+      <h3 className='Category' data-testid='Question-Category'>{decodeURIComponent(category)}</h3>
       <Rating difficulty={difficulty} />
     </div>
   )

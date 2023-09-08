@@ -1,7 +1,7 @@
 import React from 'react'
 import ScoreProgressBar from './Bar/ScoreProgressBar'
-import '../styles/Score.css'
 import { useExam } from '../hooks/useExam'
+import '../styles/Score.css'
 
 const Score = () => {
   const { getCurrentScore, getBestPossibleScore, getWorstPossibleScore } =
@@ -11,7 +11,7 @@ const Score = () => {
   const worstCaseScore = getWorstPossibleScore()
   return (
     <div className='Score'>
-      <div className='TitleBox'>
+      <div className='TitleBox' data-testid='score-title'>
         <h4>Score: {currentCaseScore}%</h4>
         <h4>Max Score: {bestCaseScore}%</h4>
       </div>
